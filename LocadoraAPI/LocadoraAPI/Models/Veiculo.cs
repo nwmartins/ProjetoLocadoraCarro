@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace LocadoraAPI.Models
@@ -20,6 +21,8 @@ namespace LocadoraAPI.Models
 
         public Marca IdMarcaNavigation { get; set; }
         public Tipo IdTipoNavigation { get; set; }
+
+        [JsonIgnore]
         public ICollection<Locacao> Locacao { get; set; }
     }
 }

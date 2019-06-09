@@ -13,20 +13,20 @@ export class VeiculoService extends BaseService {
     super();
   }
 
-  save(container: any) : Observable<any>{
-    console.log(container)
+  save(veiculo: any) : Observable<any>{
+    console.log(veiculo)
     //Primeiro Parâmetro === URL
     //Segundo Parâmetro === BODY - Corpo da Requisição
-    return this.http.post(environment.urlWebAPI + "Veiculo/", container)
+    return this.http.post(environment.urlWebAPI + "Veiculo/", veiculo)
       .catch((error: any) => Observable.throw(error.error));
   }
 
-  update(container: any) : Observable<any>{
-    console.log(container)
+  update(veiculo: any) : Observable<any>{
+    console.log(veiculo)
     //Primeiro Parâmetro === URL
     //Segundo Parâmetro === BODY - Corpo da Requisição
-    return this.http.put(environment.urlWebAPI + "Veiculo/"+container.containerId,
-     container).catch((error: any) => Observable.throw(error.error));
+    return this.http.put(environment.urlWebAPI + "Veiculo/"+veiculo.veiculo,
+     veiculo).catch((error: any) => Observable.throw(error.error));
   }
 
   listAll() : Observable<any>{

@@ -13,20 +13,20 @@ export class MarcaService extends BaseService {
     super();
   }
 
-  save(container: any) : Observable<any>{
-    console.log(container)
+  save(marca: any) : Observable<any>{
+    console.log(marca)
     //Primeiro Parâmetro === URL
     //Segundo Parâmetro === BODY - Corpo da Requisição
-    return this.http.post(environment.urlWebAPI + "Marca/", container)
+    return this.http.post(environment.urlWebAPI + "Marca/", marca)
       .catch((error: any) => Observable.throw(error.error));
   }
 
-  update(container: any) : Observable<any>{
-    console.log(container)
+  update(marca: any) : Observable<any>{
+    console.log(marca)
     //Primeiro Parâmetro === URL
     //Segundo Parâmetro === BODY - Corpo da Requisição
-    return this.http.put(environment.urlWebAPI + "Marca/"+container.containerId,
-     container).catch((error: any) => Observable.throw(error.error));
+    return this.http.put(environment.urlWebAPI + "Marca/"+marca.id,
+     marca).catch((error: any) => Observable.throw(error.error));
   }
 
   listAll() : Observable<any>{

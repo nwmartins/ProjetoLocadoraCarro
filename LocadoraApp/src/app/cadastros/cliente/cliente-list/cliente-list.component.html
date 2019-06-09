@@ -1,3 +1,63 @@
-<p>
-  cliente-list works!
-</p>
+<div class="col s12 m3 tar">
+  <button mat-icon-button> 
+    <mat-icon  (click)="callNew()">add_circle_outline</mat-icon>
+  </button>
+</div>
+
+<div class="row">
+  <div class="col s12 m12 l12">  
+    <mat-table #table [dataSource]="dataSource" matSort class="table-striped">
+
+      <ng-container matColumnDef="actionsColumn">
+        <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button>
+            <mat-icon class="link_action" matTooltip="Excluir" (click)="deleteConfirmation(element.id)">delete</mat-icon>
+          </button>  
+          <button mat-icon-button>
+            <mat-icon class="link_action" matTooltip="Editar" (click)="callUpdate(element.id)">edit</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>   
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Código </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>>
+      </ng-container>
+  
+      <ng-container matColumnDef="nome">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Nome </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="cpf">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> CPF </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.cpf}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="rg">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> RG </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.rg}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="telefone">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Telefone </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.telefone}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="endereco">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Endereço </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.endereco}} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>  
+    <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>  
+  </div>
+</div>

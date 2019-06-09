@@ -13,20 +13,20 @@ export class TipoService extends BaseService {
     super();
   }
 
-  save(container: any) : Observable<any>{
-    console.log(container)
+  save(tipo: any) : Observable<any>{
+    console.log(tipo)
     //Primeiro Parâmetro === URL
     //Segundo Parâmetro === BODY - Corpo da Requisição
-    return this.http.post(environment.urlWebAPI + "Tipo/", container)
+    return this.http.post(environment.urlWebAPI + "Tipo/", tipo)
       .catch((error: any) => Observable.throw(error.error));
   }
 
-  update(container: any) : Observable<any>{
-    console.log(container)
+  update(tipo: any) : Observable<any>{
+    console.log(tipo)
     //Primeiro Parâmetro === URL
     //Segundo Parâmetro === BODY - Corpo da Requisição
-    return this.http.put(environment.urlWebAPI + "Tipo/"+container.containerId,
-     container).catch((error: any) => Observable.throw(error.error));
+    return this.http.put(environment.urlWebAPI + "Tipo/"+tipo.id,
+     tipo).catch((error: any) => Observable.throw(error.error));
   }
 
   listAll() : Observable<any>{

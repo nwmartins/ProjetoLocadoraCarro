@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace LocadoraAPI.Models
@@ -18,6 +19,7 @@ namespace LocadoraAPI.Models
         public string Email { get; set; }
         public string Endereco { get; set; }
 
+        [JsonIgnore]
         public ICollection<Locacao> Locacao { get; set; }
     }
 }

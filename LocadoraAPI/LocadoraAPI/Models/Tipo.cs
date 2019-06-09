@@ -14,6 +14,7 @@ namespace LocadoraAPI.Models
         public int Id { get; set; }
         public string Descricao { get; set; }
         public short QtRodas { get; set; }
+
         [JsonIgnore]
         public ICollection<Veiculo> Veiculo { get; set; }
     }
