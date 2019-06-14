@@ -21,7 +21,7 @@ export class MarcaService extends BaseService {
       .catch((error: any) => Observable.throw(error.error));
   }
 
-  update(marca: any) : Observable<any>{
+  put(marca: any) : Observable<any>{
     console.log(marca)
     //Primeiro Parâmetro === URL
     //Segundo Parâmetro === BODY - Corpo da Requisição
@@ -40,7 +40,7 @@ export class MarcaService extends BaseService {
   }
 
   getById(id: number) : Observable<any>{
-    return this.http.get(environment.urlWebAPI + "Tipo/"+id)
+    return this.http.get(environment.urlWebAPI + "Marca/"+id)
       .catch((error: any) => Observable.throw(error.error));
   }
 
