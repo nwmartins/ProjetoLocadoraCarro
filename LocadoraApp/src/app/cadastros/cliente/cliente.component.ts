@@ -14,7 +14,7 @@ export class ClienteComponent implements OnInit {
   clienteModel: Cliente;
   edit : boolean;
 
-  constructor(private containerService: ClienteService, 
+  constructor(private clienteService: ClienteService, 
     private activeRoute: ActivatedRoute, 
     public router: Router, 
     public spinner: NgxSpinnerService) { }
@@ -30,7 +30,7 @@ export class ClienteComponent implements OnInit {
   }
 
   getById(id :number){
-    this.containerService.getById(id).subscribe(sucesso => {
+    this.clienteService.getById(id).subscribe(sucesso => {
       if (sucesso) 
         this.clienteModel = sucesso;
     }, error => {
@@ -41,7 +41,7 @@ export class ClienteComponent implements OnInit {
   save(){
     this.spinner.show();
     if (!this.edit){
-      this.containerService.save(this.clienteModel).subscribe(sucesso => {
+      this.clienteService.save(this.clienteModel).subscribe(sucesso => {
         if (sucesso) {
           this.spinner.hide();
           this.back();
@@ -52,7 +52,7 @@ export class ClienteComponent implements OnInit {
         this.spinner.hide();
       });
     }else {
-      this.containerService.update(this.clienteModel).subscribe(sucesso => {
+      this.clienteService.update(this.clienteModel).subscribe(sucesso => {
         if (sucesso){
           this.spinner.hide();
           this.back();

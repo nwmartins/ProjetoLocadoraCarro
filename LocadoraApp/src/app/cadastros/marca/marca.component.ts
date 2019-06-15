@@ -56,7 +56,7 @@ export class MarcaComponent implements OnInit {
         this.spinner.hide();
       });
     } else {
-      this.marcaService.put(this.marcaModel).subscribe(sucesso => {
+      this.marcaService.update(this.marcaModel).subscribe(sucesso => {
         console.log(sucesso);
         if (sucesso != null)  {
           console.log("Atualizado"); 

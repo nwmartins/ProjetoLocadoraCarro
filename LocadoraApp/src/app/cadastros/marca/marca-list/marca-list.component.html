@@ -6,6 +6,12 @@
  <p style="font-size: 20px; color: blue">Carregando...</p>
 </ngx-spinner>
 
+<div class="titulo" style="text-align: center">
+  <h1>
+    Lista de Marcas
+  </h1>
+</div>
+
 <div class="row">
   <div class="col s12 m12 l12">  
     <button mat-icon-button>
@@ -38,6 +44,6 @@
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>  
-    <mat-paginator #paginator [pageSize]="2" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>  
+    <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>  
   </div>
 </div>

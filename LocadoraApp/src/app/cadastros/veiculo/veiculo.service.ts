@@ -25,7 +25,7 @@ export class VeiculoService extends BaseService {
     console.log(veiculo)
     //Primeiro Parâmetro === URL
     //Segundo Parâmetro === BODY - Corpo da Requisição
-    return this.http.put(environment.urlWebAPI + "Veiculo/"+veiculo.veiculo,
+    return this.http.put(environment.urlWebAPI + "Veiculo/"+veiculo.id,
      veiculo).catch((error: any) => Observable.throw(error.error));
   }
 

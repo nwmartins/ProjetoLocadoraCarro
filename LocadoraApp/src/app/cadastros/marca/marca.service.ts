@@ -21,7 +21,7 @@ export class MarcaService extends BaseService {
       .catch((error: any) => Observable.throw(error.error));
   }
 
-  put(marca: any) : Observable<any>{
+  update(marca: any) : Observable<any>{
     console.log(marca)
     //Primeiro Parâmetro === URL
     //Segundo Parâmetro === BODY - Corpo da Requisição

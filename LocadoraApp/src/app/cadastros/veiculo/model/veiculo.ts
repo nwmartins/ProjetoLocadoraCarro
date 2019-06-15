@@ -1,4 +1,5 @@
 import { Tipo } from "../../tipo/model/tipo";
+import { Marca } from "../../marca/model/marca";
 
 export class Veiculo {
     id: number;
@@ -9,4 +10,5 @@ export class Veiculo {
     idMarca: number;
     ano: number;
     tipo: Tipo;
+    marca: Marca;
 }
