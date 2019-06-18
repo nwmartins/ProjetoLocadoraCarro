@@ -2311,6 +2311,33 @@ body {
   .mat-calendar-body-disabled>.mat-calendar-body-today:not(.mat-calendar-body-selected) {
     border-color: rgba(0, 0, 0, .18)
   }
+
+  .mat-dialog-container {
+    background: #fff;
+    color: rgba(0, 0, 0, .87);
+  }
+
+  .custom-dialog .mat-dialog-container { 
+    overflow: none;
+    padding: 0; 
+    height: 160px; 
+    width: 300px;
+  }
+
+  .custom-dialog .mat-dialog-content{
+    display: inline;
+    text-align: center;
+    margin: 0;
+  }
+
+  .custom-dialog .mat-dialog-actions {
+    margin-left: 60px;
+  }
+
+  .custom-dialog .mat-dialog-title {
+    text-align: center;
+    color: orangered;
+  }
   
   .mat-dialog-container {
     background: #fff;

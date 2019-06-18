@@ -17,7 +17,7 @@ export class LocacaoService extends BaseService {
     console.log(locacao)
     //Primeiro Parâmetro === URL
     //Segundo Parâmetro === BODY - Corpo da Requisição
-    return this.http.post(environment.urlWebAPI + "Tipo/", locacao)
+    return this.http.post(environment.urlWebAPI + "Locacao/", locacao)
       .catch((error: any) => Observable.throw(error.error));
   }
 
@@ -25,22 +25,22 @@ export class LocacaoService extends BaseService {
     console.log(locacao)
     //Primeiro Parâmetro === URL
     //Segundo Parâmetro === BODY - Corpo da Requisição
-    return this.http.put(environment.urlWebAPI + "Tipo/"+locacao.id,
+    return this.http.put(environment.urlWebAPI + "Locacao/"+locacao.id,
      locacao).catch((error: any) => Observable.throw(error.error));
   }
 
   listAll() : Observable<any>{
-    return this.http.get(environment.urlWebAPI + "Tipo/")
+    return this.http.get(environment.urlWebAPI + "Locacao/")
       .catch((error: any) => Observable.throw(error.error));
   }
 
   remove(id: number) : Observable<any>{
-    return this.http.delete(environment.urlWebAPI + "Tipo/"+id)
+    return this.http.delete(environment.urlWebAPI + "Locacao/"+id)
       .catch((error: any) => Observable.throw(error.error));
   }
 
   getById(id: number) : Observable<any>{
-    return this.http.get(environment.urlWebAPI + "Tipo/"+id)
+    return this.http.get(environment.urlWebAPI + "Locacao/"+id)
       .catch((error: any) => Observable.throw(error.error));
   }
 
